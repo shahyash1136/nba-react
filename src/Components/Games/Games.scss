@@ -1,0 +1,100 @@
+@import '../../scss/variables';
+@import '../../scss/mixin';
+.games {
+    padding: 50px 0px;
+
+    &__head {
+        @extend %flexbox;
+        justify-content: space-between;
+        align-items: center;
+
+        &Left {
+            font-size: 30px;
+            font-family: $regular_font-family_primary;
+            font-weight: $regular_font-weight;
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        &Right {
+            @extend %flexbox;
+            justify-content: space-between;
+            align-items: center;
+
+            .drpDwn {
+                flex: 0 0 150px;
+                width: 150px;
+
+                &__value {
+                    background: $secondary;
+                    border-color: $secondary;
+                    color: $primary;
+                    text-transform: capitalize;
+                    height: 30px;
+                    @include border-radius(10px);
+                    padding: 5px 10px;
+                    padding-right: 40px;
+
+                    span {
+                        font-family: $regular_font-family_primary;
+                        font-weight: $regular_font-weight;
+                        line-height: 1;
+                    }
+                }
+
+                &__list {
+                    ul {
+                        li {
+                            color: rgba($black, .5);
+                            font-size: 14px;
+                            padding: 10px;
+
+                            &:hover {
+                                background-color: $secondary;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    &__container {
+        @extend %flexbox;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+        min-height: 600px;
+        .fixtures__box {
+            flex: 0 0 33.33%;
+            width: 33.33%;
+            padding: 0px 10px;
+            margin-top: 15px;
+        }
+    }
+
+}
+.pagination {
+    @extend %flexbox;
+    justify-content: center;
+    align-items: center;
+    .btn{
+        width: 120px;
+        min-width: 120px;
+        font-family: $medium_font-family_secondary;
+        font-weight: $medium_font-weight;
+        font-size: 14px;
+        height: 35px;
+        color: $white;
+        background: $primary;
+        &:not(:last-child){
+            margin-right: 15px;
+        }
+    }
+}
