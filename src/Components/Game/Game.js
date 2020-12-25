@@ -1,6 +1,6 @@
 import React from 'react';
 import './Game.scss'
-import vsSvg from '../../../assets/images/vs.svg';
+import vsSvg from '../../assets/images/vs.svg';
 const Game = (props) => {
     return (
         <div className="fixtures__box" data-id={props.id}>
@@ -19,7 +19,7 @@ const Game = (props) => {
                         <span className="shortName">{props.teamAShortName}</span>
                     </div>
                     <div className="team__logo">
-                        <img src={require(`../../../assets/images/teams/${props.teamAId}.png`)} alt={props.teamAFullName} />
+                        <img src={require(`../../assets/images/teams/${props.teamAId}.png`).default} alt={props.teamAFullName} />
                     </div>
                 </div>
                 <div className="fixtures__content team__vs">
@@ -45,7 +45,7 @@ const Game = (props) => {
                         <span className="shortName">{props.teamBShortName}</span>
                     </div>
                     <div className="team__logo">
-                        <img src={require(`../../../assets/images/teams/${props.teamBId}.png`)} alt={props.teamBFullName} />
+                        <img src={require(`../../assets/images/teams/${props.teamBId}.png`).default} alt={props.teamBFullName} />
                     </div>
                 </div>
             </div>

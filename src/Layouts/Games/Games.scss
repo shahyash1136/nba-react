@@ -1,5 +1,5 @@
-@import '../../scss/variables';
-@import '../../scss/mixin';
+@import "../../scss/variables";
+@import "../../scss/mixin";
 .games {
     padding: 50px 0px;
 
@@ -45,7 +45,7 @@
                 &__list {
                     ul {
                         li {
-                            color: rgba($black, .5);
+                            color: rgba($black, 0.5);
                             font-size: 14px;
                             padding: 10px;
 
@@ -71,6 +71,7 @@
         flex-wrap: wrap;
         margin: 0 -5px;
         min-height: 600px;
+        position: relative;
         .fixtures__box {
             flex: 0 0 33.33%;
             width: 33.33%;
@@ -78,13 +79,12 @@
             margin-top: 15px;
         }
     }
-
 }
 .pagination {
     @extend %flexbox;
     justify-content: center;
     align-items: center;
-    .btn{
+    .btn {
         width: 120px;
         min-width: 120px;
         font-family: $medium_font-family_secondary;
@@ -93,7 +93,7 @@
         height: 35px;
         color: $white;
         background: $primary;
-        &:not(:last-child){
+        &:not(:last-child) {
             margin-right: 15px;
         }
     }
