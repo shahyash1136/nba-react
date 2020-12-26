@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Home from "./Home/Home";
 import Teams from "./Teams/Teams";
 import Players from "./Players/Players";
-import Games from "./Games/Games";
+import GamesList from "./Games-List/Games-List";
+import Game from "./Game/Game";
 import PlayerData from "./PlayerData/PlayerData";
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
@@ -20,7 +21,8 @@ class Layout extends Component {
                             <Route path='/teams' component={Teams} />
                             <Route path='/players' component={Players} />
                             <Route path='/player/:playerName/:playerId' component={PlayerData} />
-                            <Route path='/team/:teamName/:teamId' component={Games} />
+                            <Route path='/team/:teamName/:teamId' component={GamesList} />
+                            <Route path='/match/:gameName/:gameId' component={Game} />
                         </Switch>
                     </section>
                     <Footer />

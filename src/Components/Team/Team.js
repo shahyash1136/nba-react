@@ -7,7 +7,7 @@ const Team = (props) => {
     return (
 
         <div className="club" data-conference={props.conference}>
-            <NavLink to={`/team/${name}/${props.teamId}/${props.pageNo}`} className="club__container">
+            <NavLink to={`/team/${name}/${props.teamId}/`} className="club__container">
                 <div className="club__logo">
                     <img
                         src={require(`../../assets/images/teams/${props.teamId}.png`).default}

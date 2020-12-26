@@ -9,7 +9,7 @@ const TabsList = (props) => {
     }
 
     return (
-        <li className={activeClass} data-conference={props.confer} onClick={props.click}>
+        <li className={activeClass} data-value={props.confer} onClick={props.click}>
             {props.conference}
         </li>
     )
