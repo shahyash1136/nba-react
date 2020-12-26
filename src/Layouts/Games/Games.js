@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loader from "../../Components/Loader/Loader";
 import Game from '../../Components/Game/Game';
+import { NavLink } from 'react-router-dom';
 import './Games.scss';
 import axios from 'axios';
 
@@ -79,7 +80,7 @@ class Games extends Component {
                 let option = { year: 'numeric', month: 'short', day: 'numeric' };
                 let newDate = new Date(dateString).toLocaleDateString(undefined, option);
 
-                return <Game key={game.id} date={newDate} status={game.status} teamAFullName={game.home_team.full_name} teamAShortName={game.home_team.abbreviation} teamAScore={game.home_team_score} teamBFullName={game.visitor_team.full_name} teamBShortName={game.visitor_team.abbreviation} teamBScore={game.visitor_team_score} time={game.time} teamAId={game.home_team.id} teamBId={game.visitor_team.id} />
+                return <Game key={game.id} date={newDate} status={game.status} teamAFullName={game.home_team.name} teamAShortName={game.home_team.abbreviation} teamAScore={game.home_team_score} teamBFullName={game.visitor_team.name} teamBShortName={game.visitor_team.abbreviation} teamBScore={game.visitor_team_score} time={game.time} teamAId={game.home_team.id} teamBId={game.visitor_team.id} />
             })
         }
         return (

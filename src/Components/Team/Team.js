@@ -6,8 +6,8 @@ const Team = (props) => {
     name = name.replace(/\s+/g, '-').toLowerCase();
     return (
 
-        <NavLink to={`/team/${name}/${props.teamId}`} className="club" data-conference={props.conference}>
-            <div className="club__container">
+        <div className="club" data-conference={props.conference}>
+            <NavLink to={`/team/${name}/${props.teamId}/${props.pageNo}`} className="club__container">
                 <div className="club__logo">
                     <img
                         src={require(`../../assets/images/teams/${props.teamId}.png`).default}
@@ -16,8 +16,8 @@ const Team = (props) => {
                 <div className="club__name">
                     <span className="fullName">{props.fullName}</span>
                 </div>
-            </div>
-        </NavLink>
+            </NavLink>
+        </div>
     )
 }
 
