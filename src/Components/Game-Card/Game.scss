@@ -4,9 +4,10 @@
     padding: 60px 0px;
 
     &__box {
-        width: 376px;
         overflow: hidden;
-
+        a {
+            text-decoration: none;
+        }
         .team {
             &__A,
             &__B {
@@ -75,6 +76,10 @@
                 font-weight: $regular_font-weight;
                 font-size: 30px;
                 line-height: 1;
+                color: $complementray;
+                &.si-win {
+                    color: $complementray-second;
+                }
             }
 
             &__center {

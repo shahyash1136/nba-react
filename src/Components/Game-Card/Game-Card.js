@@ -29,7 +29,7 @@ const Game = (props) => {
                         </div>
                     </div>
                     <div className="fixtures__content team__vs">
-                        <div className="team__left">
+                        <div className={`team__left ${props.winATeam}`}>
                             <span>{props.teamAScore}</span>
                         </div>
                         <div className="team__center">
@@ -41,7 +41,7 @@ const Game = (props) => {
                                 <span>{props.time}</span>
                             </div>
                         </div>
-                        <div className="team__right">
+                        <div className={`team__right ${props.winBTeam}`}>
                             <span>{props.teamBScore}</span>
                         </div>
                     </div>

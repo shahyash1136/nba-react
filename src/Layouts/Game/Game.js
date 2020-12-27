@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TabList from '../../Components/TabsList/TabsList';
 import Loader from "../../Components/Loader/Loader";
+import ScoreTable from "../../Components/ScoreTable/ScoreTable";
+import './Game.scss';
 import axios from "axios";
 
 class Game extends Component {
@@ -62,7 +64,7 @@ class Game extends Component {
         } else {
             tableMarup = this.state.gameScore.data.map(el => {
                 let markup;
-                markup = <h6>{`${el.player.first_name} ${el.player.last_name}`}</h6>
+                markup = <ScoreTable key={el.id} name={`${el.player.first_name} ${el.player.last_name}`} pos={el.player.position} min={el.min} pts={el.pts} reb={el.reb} ast={el.ast} stl={el.stl} blk={el.blk} fgm={el.fgm} fga={el.fga} fgperct={el.fg_pct} threepm={el.fg3m} threepa={el.fg3a} threepperct={el.fg_pct} ftm={el.ftm} fta={el.fta} ftperct={el.ft_pct} off={el.oreb} deff={el.dreb} turnOver={el.turnover} pf={el.pf} />
                 if (this.state.activeTab === 'home' && el.team.id === el.game.home_team_id) {
                     return markup;
                 } else if (this.state.activeTab === 'away' && el.team.id === el.game.visitor_team_id) {
@@ -81,7 +83,17 @@ class Game extends Component {
                         {tabMarkup}
                     </ul>
 
-                    {tableMarup}
+                    <div className="tbl">
+                        <div className="tbl__head">
+                            <ScoreTable name={'Name'} pos={'POS'} min={'MIN'} pts={'PTS'} reb={'REB'} ast={'AST'} stl={'STL'} blk={'BLK'} fgm={'FGM'} fga={'FGA'} fgperct={'FG%'} threepm={'3PM'} threepa={'3PA'} threepperct={'3P%'} ftm={'FTM'} fta={'FTA'} ftperct={'FT%'} off={'OFF'} deff={'DEF'} turnOver={'TO'} pf={'PF'} />
+                        </div>
+                        <div className="tbl__body">
+                            {tableMarup}
+                        </div>
+                    </div>
+
+
+
 
                 </div>
 

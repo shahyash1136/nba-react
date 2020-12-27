@@ -104,7 +104,6 @@ class Games extends Component {
                     gameStatus = '';
                     awayTeamScore = '';
                     homeTeamScore = '';
-
                 } else if (game.period === 4 && game.status === 'Final') {
                     gameStatus = 'FT';
                     awayTeamScore = game.visitor_team_score;
@@ -115,7 +114,10 @@ class Games extends Component {
                     homeTeamScore = game.home_team_score;
                 }
 
-                return <GameCard key={game.id} id={game.id} date={newDate} status={gameStatus} teamAFullName={game.home_team.name} teamAShortName={game.home_team.abbreviation} teamAScore={homeTeamScore} teamBFullName={game.visitor_team.name} teamBShortName={game.visitor_team.abbreviation} teamBScore={awayTeamScore} time={game.time} teamAId={game.home_team.id} teamBId={game.visitor_team.id} />
+                let winATeam = homeTeamScore > awayTeamScore ? 'si-win' : '';
+                let winBTeam = awayTeamScore > homeTeamScore ? 'si-win' : '';
+
+                return <GameCard key={game.id} id={game.id} date={newDate} status={gameStatus} teamAFullName={game.home_team.name} teamAShortName={game.home_team.abbreviation} teamAScore={homeTeamScore} teamBFullName={game.visitor_team.name} teamBShortName={game.visitor_team.abbreviation} teamBScore={awayTeamScore} time={game.time} teamAId={game.home_team.id} teamBId={game.visitor_team.id} winATeam={winATeam} winBTeam={winBTeam} />
             })
         }
         return (
